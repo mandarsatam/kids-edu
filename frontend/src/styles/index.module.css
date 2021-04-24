@@ -7,3 +7,29 @@
     flex-direction: column;
     align-items: center;
 }
+
+.teacher{
+    padding: 20px 30px;
+    background-color: rgb(223, 55, 55);
+    margin: 20px;
+    border:none;
+    border-radius: 5px;
+    
+}
+.teacher:hover{
+    background-color: rgb(172, 10, 10);
+    cursor: pointer;
+    color: white;
+}
+.student:hover{
+   background-color: green;
+    cursor: pointer;
+    color: white;
+}
+.student{
+    padding: 20px 30px;
+    background-color:rgb(27, 189, 27);
+    margin: 20px;
+    border:none;
+    border-radius: 5px;
+}
