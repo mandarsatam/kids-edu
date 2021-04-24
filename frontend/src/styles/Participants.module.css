@@ -1,0 +1,9 @@
+.partCont{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.partTop{
+    display: flex;
+    justify-content: left;
+}

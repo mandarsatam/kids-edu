@@ -1,0 +1,30 @@
+/* * {
+    box-sizing: border-box;
+  } */
+  
+  .whiteboard {
+    height: 90vh;
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    /* position: absolute; */
+    /* left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0; */
+  }
+  
+  .colors {
+    display: flex;
+  }
+  
+  .color {
+    height: 48px;
+    width: 48px;
+  }
+  
+  .black { background-color: black; }
+  .red { background-color: red; }
+  .green { background-color: green; }
+  .blue { background-color: blue; }
+  .yellow { background-color: yellow; }

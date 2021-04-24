@@ -16,7 +16,7 @@ const IndexPage = (props) => (
         </style>
         <h1 className={styles.heading}>Index Page</h1>
         <div className={styles.linksContainer}>
-            <Link href="/about">Goto About</Link>
+            <Link href="/dashboard">Goto Dashboard</Link>
             <button onClick={() => props.router.push('/courses')}>Goto Courses</button>
         </div>
         <div className="icecream-container">

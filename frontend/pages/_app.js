@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import "../src/styles/styles.css";
 
 const CustomApp = ({ Component, pageProps }) => (
     <>
