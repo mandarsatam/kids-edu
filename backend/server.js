@@ -4,26 +4,48 @@ const http = require('http');
 const server = http.createServer(app);
 const socketio = require('socket.io');
 const cors = require('cors')
+const {
+  userJoin,
+  getCurrentUser,
+  getGroupUsers
+} = require('./utils/users');
 
 app.use(cors())
 
 const io = socketio(server, {
-    cors: {
-      origin: "*",
-      methods: ["GET", "POST"]
-    }
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
 });
 
 const onConnection = (socket) => {
-  socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
+  console.log("New Client is connected");
+
+  //User joins a session
+  socket.on("joinSession", ({name, group}) => {
+    console.log(name, group);
+    const user = userJoin(socket.id, name, group);
+    socket.join(user.group);
+  })
+
+  //Drawing something
+  socket.on('drawing', (data) => {
+    const user = getCurrentUser(socket.id);
+    console.log(user);
+
+    // if(user.name === "teacher"){
+
+    // }
+
+    io.to(user.group).emit('drawing', data);
+    // io.to(user.group).emit('message', formatMessage(user.username, message));
+  });
 }
-
 io.on('connection', onConnection);
-
 
 const port = 8080;
 server.listen(port, () => console.log(`server is running on port ${port}`));
-
 
 
 
@@ -101,6 +123,5 @@ server.listen(port, () => console.log(`server is running on port ${port}`));
 // const PORT = 3001;
 // server.listen(PORT, () => console.log("Listening on 3001"));
 
-        
-        
-        
+
+

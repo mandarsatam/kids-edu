@@ -16,7 +16,8 @@ const IndexPage = (props) => (
         </style>
         <h1 className={styles.heading}>Index Page</h1>
         <div className={styles.linksContainer}>
-            <Link href="/dashboard">Goto Dashboard</Link>
+            <Link href="/teachersDeck">I'm a teacher</Link>
+            <Link href="/middlePage">I'm a student</Link>
         </div>
     </>
 );
