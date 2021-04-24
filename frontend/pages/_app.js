@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import "../src/styles/styles.css";
+import {SocketContextProvider} from "../src/context/SocketContext"
 
 const CustomApp = ({ Component, pageProps }) => (
     <>
@@ -13,7 +14,9 @@ const CustomApp = ({ Component, pageProps }) => (
         <Head>
             <title>Learn Next.js</title>
         </Head>
-        <Component {...pageProps} />
+        <SocketContextProvider>
+            <Component {...pageProps} />
+        </SocketContextProvider>
     </>
 );
 
