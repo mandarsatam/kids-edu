@@ -1,0 +1,31 @@
+.createclass,.joinclass{
+    width: 500px;
+    background-color: darkblue;
+    margin: auto;
+    min-height: 200px;
+    text-align: center;
+    padding: 20px;
+   
+}
+
+.createclass>h1,.joinclass>h1{
+    color: white;
+}
+
+.createclass>input,.joinclass>input{
+    margin: 20px 0px;
+    padding: 5px 15px;
+}
+
+.createbtn{
+    background-color: darkmagenta;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+
+}
+.createbtn:hover{
+    cursor: pointer;
+    opacity: 80%;
+}
