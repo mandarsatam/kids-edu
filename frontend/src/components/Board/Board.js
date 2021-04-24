@@ -7,7 +7,6 @@ const Board = () => {
   const colorsRef = useRef(null);
   const socketRef = useRef();
   const [currColor, setCurrColor] = React.useState("black");
-  const [size, setSize] = React.useState(5);
 
   useEffect(() => {
 
@@ -19,23 +18,23 @@ const Board = () => {
 
     // ----------------------- Colors --------------------------------------------------
 
-    // const colors = document.getElementsByClassName('color');
-    // // set the current color
-    // const current = {
-    //   color: 'black',
-    // };
+    const colors = document.getElementsByClassName('color');
+    // set the current color
+    const current = {
+      color: 'black',
+    };
 
-    // // helper that will update the current color
-    // const onColorUpdate = (e) => {
-    //   current.color = e.target.value;
-    //   console.log(current.color);
-    // };
+    // helper that will update the current color
+    const onColorUpdate = (e) => {
+      current.color = e.target.value;
+      console.log(current.color);
+    };
 
-    // // loop through the color elements and add the click event listeners
-    // for (let i = 0; i < colors.length; i++) {
-    //   colors[i].addEventListener('click', onColorUpdate, false);
-    // }
-    // let drawing = false;
+    // loop through the color elements and add the click event listeners
+    for (let i = 0; i < colors.length; i++) {
+      colors[i].addEventListener('click', onColorUpdate, false);
+    }
+    let drawing = false;
 
     // ------------------------------- create the drawing ----------------------------
 
@@ -136,22 +135,22 @@ const Board = () => {
     <div>
       <canvas ref={canvasRef} className={styles.whiteboard} />
 
-      {/* <div className={styles.colors}>
+      <div className={styles.colors}>
         <div className={styles.color} style={{ backgroundColor: "black" }} />
         <div className={styles.color} style={{ backgroundColor: "red" }} />
         <div className={styles.color} style={{ backgroundColor: "green" }} />
         <div className={styles.color} style={{ backgroundColor: "blue" }} />
         <div className={styles.color} style={{ backgroundColor: "yellow" }} />
-      </div> */}
+      </div>
 
-      <div>
+      {/* <div>
         Select Brush Color : &nbsp;
         <input type="color" value={currColor} onChange={(e) => setCurrColor(e.target.value)} />
       </div>
 
       <div>
         Select Brush Size : &nbsp;
-        <select value={size} onChange={(e) => setSize(e.target.value)}>
+        <select value={size} onChange={(e) => setSize(e.targ.value)}>
           <option> 5 </option>
           <option> 10 </option>
           <option> 15 </option>
@@ -159,7 +158,7 @@ const Board = () => {
           <option> 25 </option>
           <option> 30 </option>
         </select>
-      </div>
+      </div> */}
     </div>
   );
 };
