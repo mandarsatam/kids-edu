@@ -17,10 +17,6 @@ const IndexPage = (props) => (
         <h1 className={styles.heading}>Index Page</h1>
         <div className={styles.linksContainer}>
             <Link href="/dashboard">Goto Dashboard</Link>
-            <button onClick={() => props.router.push('/courses')}>Goto Courses</button>
-        </div>
-        <div className="icecream-container">
-            <Image src="/icecream-by-pexels.jpeg" width={500} height={750} />
         </div>
     </>
 );
