@@ -1,12 +1,18 @@
 import React, { useRef, useEffect } from 'react';
 import io from 'socket.io-client';
+// import {SocketContextProvider} from '../../../src/context/SocketContext';
 import styles from '../../styles/Board.module.css';
+import {useContext} from 'react';
+import useSocketContext from '../../../src/context/SocketContext'
 
-const Board = () => {
+
+const Board = ({name}) => {
   const canvasRef = useRef(null);
   const colorsRef = useRef(null);
-  const socketRef = useRef();
+  // const socketRef = useRef();
   const [currColor, setCurrColor] = React.useState("black");
+  // const socket = useContext(SocketContextProvider)
+  const socket = useSocketContext();
 
   useEffect(() => {
 
@@ -51,7 +57,7 @@ const Board = () => {
       const w = canvas.width;
       const h = canvas.height;
 
-      socketRef.current.emit('drawing', {
+      socket.emit('drawing', {
         x0: x0 / w,
         y0: y0 / h,
         x1: x1 / w,
@@ -124,9 +130,10 @@ const Board = () => {
       const h = canvas.height;
       drawLine(data.x0 * w, data.y0 * h, data.x1 * w, data.y1 * h, data.color);
     }
+    console.log(socket);
 
-    socketRef.current = io.connect('http://localhost:8080');
-    socketRef.current.on('drawing', onDrawingEvent);
+    // socketRef.current = io.connect('http://localhost:8080');
+    socket.on('drawing', onDrawingEvent);
   }, []);
 
   // ------------- The Canvas and color elements --------------------------

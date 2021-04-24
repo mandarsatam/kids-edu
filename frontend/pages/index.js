@@ -3,7 +3,6 @@ import { withRouter,useRouter } from 'next/router';
 import Image from 'next/image';
 
 import styles from '../src/styles/index.module.css';
-
 const IndexPage = (props) =>{
     const router=useRouter()
     const gotoClass=()=>{
@@ -35,5 +34,6 @@ const IndexPage = (props) =>{
     );
 }
  
+
 
 export default withRouter(IndexPage);
