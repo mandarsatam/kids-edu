@@ -1,21 +1,28 @@
-/* * {
-    box-sizing: border-box;
-  } */
-  
 .whiteboard {
-  height: 90vh;
+  height: 70vh;
   width: 80%;
   margin: auto;
-  border: 1px solid black;
-  /* position: absolute; */
-  /* left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0; */
+  border-radius: 10px;
+  background-color:white;
+  justify-content:space-between;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 12%);
+}
+
+.canvasMain{
+  display: flex;
 }
 
 .colors {
-  display: flex;
+  flex-basis: 5%;
+  display: inline-block;
+  background-color:white;
+  border-radius:10px
+}
+
+.colors button{
+  margin:1em;
+  border-radius: 3px;
+  border: none;
 }
 
 .color {
@@ -23,8 +30,14 @@
   width: 48px;
 }
 
-.black { background-color: black; }
-.red { background-color: red; }
-.green { background-color: green; }
-.blue { background-color: blue; }
-.yellow { background-color: yellow; }
+ 
+.black { background-color: black; height: 48px;
+  width: 48px;}
+.red { background-color: red; height: 48px;
+  width: 48px;}
+.green { background-color: green; height: 48px;
+  width: 48px;}
+.blue { background-color: blue; height: 48px;
+  width: 48px;}
+.yellow { background-color: yellow; height: 48px;
+  width: 48px;}

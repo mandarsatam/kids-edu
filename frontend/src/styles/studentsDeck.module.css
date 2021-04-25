@@ -1,0 +1,25 @@
+.studDeckCont{
+    background-color: #FCBB3D;
+    justify-content:center;
+}
+
+
+.studDeckCont h1{
+    color: white;
+    font-size: 3em;
+    font-family:  'Poppins', 'sans-serif';
+    margin: 0;
+    margin-left:0.5em;
+}
+
+
+.studDeckCont h2{
+    color: white;
+    font-family:  'Poppins', 'sans-serif';
+
+}
+
+.studHead{
+    display: flex;
+    margin: 2em;
+}

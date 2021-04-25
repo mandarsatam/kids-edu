@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import "../src/styles/styles.css";
-import {SocketContextProvider} from "../src/context/SocketContext"
+import { SocketContextProvider } from "../src/context/SocketContext"
 
 const CustomApp = ({ Component, pageProps }) => (
     <>
@@ -12,12 +12,14 @@ const CustomApp = ({ Component, pageProps }) => (
             `}
         </style>
         <Head>
-            <title>Learn Next.js</title>
+            <title>Kids Edu</title>
+            <link rel="preconnect" href="https://fonts.gstatic.com"/>
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
         </Head>
-        <SocketContextProvider>
-            <Component {...pageProps} />
-        </SocketContextProvider>
-    </>
-);
+                <SocketContextProvider>
+                    <Component {...pageProps} />
+                </SocketContextProvider>
+            </>
+            );
 
-export default CustomApp;
+            export default CustomApp;

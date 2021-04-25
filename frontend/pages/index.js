@@ -6,13 +6,12 @@ import styles from '../src/styles/index.module.css';
 const IndexPage = (props) =>{
     const router=useRouter()
     const gotoClass=()=>{
-        router.push("/createclass")
+        router.push("/teachersDeck")
     }
 
     const joinClass=()=>{
-        router.push("/joinclass")
+        router.push("/middlePage")
     }
-
 
     return (
         <>
@@ -26,7 +25,6 @@ const IndexPage = (props) =>{
             </style>
             <h1 className={styles.heading}>Index Page</h1>
             <div className={styles.linksContainer}>
-                <Link href="/dashboard">Goto Dashboard</Link>
                 <button className={styles.teacher} onClick={gotoClass}>I am a Teacher</button>
                 <button className={styles.student} onClick={joinClass}>I am a Student</button>
             </div>

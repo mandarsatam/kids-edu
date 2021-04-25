@@ -23,8 +23,13 @@
     width: 48px;
   }
   
-  .black { background-color: black; }
-  .red { background-color: red; }
-  .green { background-color: green; }
-  .blue { background-color: blue; }
-  .yellow { background-color: yellow; }
+  .black { background-color: black; height: 48px;
+    width: 48px;}
+  .red { background-color: red; height: 48px;
+    width: 48px;}
+  .green { background-color: green; height: 48px;
+    width: 48px;}
+  .blue { background-color: blue; height: 48px;
+    width: 48px;}
+  .yellow { background-color: yellow; height: 48px;
+    width: 48px;}

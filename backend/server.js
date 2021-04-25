@@ -7,7 +7,8 @@ const cors = require('cors')
 const {
   userJoin,
   getCurrentUser,
-  getGroupUsers
+  getGroupUsers,
+  endSession
 } = require('./utils/users');
 
 app.use(cors())
@@ -29,14 +30,15 @@ const onConnection = (socket) => {
     socket.join(user.group);
   })
 
+  socket.on("endSession", ({name, group})=>{
+    console.log(name ,group);
+    endSession(socket.id);
+  })
+
   //Drawing something
   socket.on('drawing', (data) => {
     const user = getCurrentUser(socket.id);
     console.log(user);
-
-    // if(user.name === "teacher"){
-
-    // }
 
     io.to(user.group).emit('drawing', data);
     // io.to(user.group).emit('message', formatMessage(user.username, message));
@@ -46,12 +48,6 @@ io.on('connection', onConnection);
 
 const port = 8080;
 server.listen(port, () => console.log(`server is running on port ${port}`));
-
-
-
-
-
-
 
 // const express = require('express');
 // const http = require('http');

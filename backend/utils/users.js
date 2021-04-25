@@ -1,4 +1,4 @@
-const users = [];
+let users = [];
 
 // Join user to chat
 function userJoin(id, username, group) {
@@ -15,6 +15,12 @@ function getCurrentUser(id) {
   return users.find(user => user.id === id);
 }
 
+function endSession(id){
+  users = users.filter(user=>{
+      return user.id !== id;
+  })
+}
+
 // Get group users
 function getGroupUsers(group) {
   return users.filter(user => user.group === group);
@@ -23,5 +29,6 @@ function getGroupUsers(group) {
 module.exports = {
   userJoin,
   getCurrentUser,
-  getGroupUsers
+  getGroupUsers,
+  endSession
 };
