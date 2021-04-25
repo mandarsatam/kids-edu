@@ -1,15 +1,16 @@
 import Participants from "../src/components/Participants";
-import { Board } from "../src/components/Board/Board"
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import styles from "../src/styles/Dashboard.module.css"
 import React, {useContext} from 'react';
 import useSocketContext from '../src/context/SocketContext'
-
+import {useRouter} from "next/router"
 
 const teachersDeck = () => {
     const participants= ["John", "Jane", "Doe", "Alex"];
     const socket = useSocketContext();
+    const router=useRouter()
+
     
     return (
         <div>
@@ -28,7 +29,6 @@ const teachersDeck = () => {
                     ))
                 }
             </div>
-            <button onClick={() => joinSession()}>Join</button>
         </div>
     )
 }
